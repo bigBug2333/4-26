@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            * {
+              margin: 0;
+              padding: 0;
+            }
+        
+            div {
+              width: 100px;
+              height: 90px;
+              background-color: hotpink;
+              border-top: 30px solid lime;
+              border-radius: 30px 30px 0 0;
+              position: absolute;
+            }
+          </style>
+        </head>
+        <body>
+        
+        <button>奔跑把，飞飞</button>
+        <div>飞飞</div>
+        
+    <script>
+        var btn = document.querySelector("button");
+        var box = document.querySelector("div");
+        btn.onclick = function () {
+            var timeId = setInterval(function () {
+                var current = box.offsetLeft;
+                if (current < 1300) {
+                    current += 20;
+                    box.style.left= current + "px";
+                } else {
+                    clearInterval(timeId);
+                }
+            },15)
+        }
+
+        
+
+
+    </script>
+</body>
+</html>
